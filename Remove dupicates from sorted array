@@ -1,0 +1,29 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        //approach1
+      /* LinkedHashSet<Integer> h=new LinkedHashSet<Integer>();
+       for(int i=0;i<nums.length;i++)
+       {
+        h.add(nums[i]);
+       } 
+       int j=0;
+        for(int i:h){
+            nums[j++]=i;
+        }
+       for(int i=h.size();i<nums.length;i++){
+        nums[i]=0;
+       }
+       return h.size();*/
+       int count=0;
+       if(nums.length==1){
+        return 1;
+        }
+       for(int i=0;i<nums.length-1;i++){
+        if(nums[i]!=nums[i+1]){
+            nums[count++]=nums[i];
+        }
+       }
+        nums[count++]=nums[nums.length-1];
+       return count;
+    }
+    }
